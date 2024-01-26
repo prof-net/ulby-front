@@ -1,22 +1,30 @@
-import classes from './App.module.scss';
+
 import {Link, Outlet} from "react-router-dom";
-import img from './assets/1.jpg';
-import Svg from './assets/adobe.svg';
+import './styles/index.scss';
+import {useState} from "react";
+
+enum EnumTheme {
+    "DARK"= 'dark',
+    "LIGHT" = 'light'
+}
+
 
 const App = () => {
-    console.log(__VERSION__);
+    const [theme, setTheme] = useState<EnumTheme>(EnumTheme.DARK);
+
+    const handleTheme = () => {
+        setTheme(theme === EnumTheme.DARK ? EnumTheme.LIGHT : EnumTheme.DARK);
+    }
+
     return (
-        <div className={classes.App}>
+        <div className={`app ${theme}`}>
+            <button onClick={handleTheme}>toggle</button>
             <div>
                 <Link to={'/about'}>about</Link>
             </div>
             <div>
                 <Link to={'/contact'}>contact</Link>
             </div>
-
-            <img src={img} width={100} height={100}/>
-            <Svg fill={'red'} height={100} width={100}/>
-            222
             <Outlet />
         </div>
     );
