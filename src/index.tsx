@@ -1,10 +1,11 @@
 import ReactDOM from 'react-dom/client';
-import App from './App';
+import App from './app/App';
 import {createBrowserRouter, RouterProvider} from "react-router-dom";
-import {AboutLazy} from "./pages/About/About.lazy";
-import {ContactLazy} from "./pages/Contact/Contact.lazy";
-import {Suspense} from "react";
-import ThemeProvider from "./theme/ThemeProvider";
+import React, {Suspense} from "react";
+import {ThemeProvider} from "app/providers/ThemeProvider";
+import {AboutPage} from "pages/AboutPages";
+import {ContactPage} from "pages/ContactPages";
+
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 
@@ -15,11 +16,11 @@ const router = createBrowserRouter([
         children: [
             {
                 path: "about/",
-                element: <Suspense fallback={'...'}><AboutLazy /></Suspense>,
+                element: <Suspense fallback={'...'}><AboutPage /></Suspense>,
             },
             {
                 path: "contact/",
-                element: <Suspense fallback={'...'}> <ContactLazy /></Suspense>,
+                element: <Suspense fallback={'...'}> <ContactPage /></Suspense>,
             },
         ]
     },
