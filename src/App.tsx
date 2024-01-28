@@ -1,24 +1,15 @@
-
 import {Link, Outlet} from "react-router-dom";
 import './styles/index.scss';
-import {useState} from "react";
-
-enum EnumTheme {
-    "DARK"= 'dark',
-    "LIGHT" = 'light'
-}
-
+import {useTheme} from "./theme/useTheme";
+import {classNames} from "./helpers/classNames/classNames";
 
 const App = () => {
-    const [theme, setTheme] = useState<EnumTheme>(EnumTheme.DARK);
 
-    const handleTheme = () => {
-        setTheme(theme === EnumTheme.DARK ? EnumTheme.LIGHT : EnumTheme.DARK);
-    }
+    const {theme,toggleTheme} = useTheme();
 
     return (
-        <div className={`app ${theme}`}>
-            <button onClick={handleTheme}>toggle</button>
+        <div className={classNames('app', {}, [theme])}>
+            <button onClick={toggleTheme}>toggle</button>
             <div>
                 <Link to={'/about'}>about</Link>
             </div>

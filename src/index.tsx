@@ -4,6 +4,7 @@ import {createBrowserRouter, RouterProvider} from "react-router-dom";
 import {AboutLazy} from "./pages/About/About.lazy";
 import {ContactLazy} from "./pages/Contact/Contact.lazy";
 import {Suspense} from "react";
+import ThemeProvider from "./theme/ThemeProvider";
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 
@@ -24,5 +25,10 @@ const router = createBrowserRouter([
     },
 ]);
 
-root.render(<RouterProvider router={router} />);
+root.render(
+    <ThemeProvider>
+        <RouterProvider router={router} />
+    </ThemeProvider>
+
+);
 
