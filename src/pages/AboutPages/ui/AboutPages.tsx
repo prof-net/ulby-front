@@ -2,8 +2,8 @@ import React from 'react';
 
 const AboutPages = () => {
     return (
-        <div>
-            About
+        <div>AboutPages
+
         </div>
     );
 };

@@ -2,7 +2,6 @@ import React from 'react';
 import classes from './Navbar.module.scss';
 import {classNames} from "shared/lib/classNames/classNames";
 import AppLink, {EnumAppLinkTheme} from "shared/ui/AppLink/AppLink";
-import {ThemeSwitcher} from "shared/ui/ThemeSwitcher";
 
 interface IProps {
     className?: string;
@@ -14,7 +13,6 @@ export const Navbar: React.FC<IProps> = (props) => {
 
     return (
         <div className={classNames(classes.Navbar, {}, [className])}>
-            <ThemeSwitcher />
             <div className={classes.Links}>
                 <AppLink
                     theme={EnumAppLinkTheme.SECONDARY}
