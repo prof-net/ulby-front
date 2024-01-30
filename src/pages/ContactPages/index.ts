@@ -1,3 +1,3 @@
-import {ContactPagesLazy} from './ui/ContactPages.lazy';
+import { ContactPagesLazy } from './ui/ContactPages.lazy'
 
-export {ContactPagesLazy as ContactPage}
+export { ContactPagesLazy as ContactPage }

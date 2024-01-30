@@ -1,11 +1,11 @@
-import React from 'react';
+import { type FC } from 'react'
 
-const ContactPages = () => {
-    return (
-        <div>
-            Contact
-        </div>
-    );
-};
+const ContactPages: FC = () => {
+  return (
+      <div>
+          Contact
+      </div>
+  )
+}
 
-export default ContactPages;
+export default ContactPages
