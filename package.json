@@ -6,7 +6,9 @@
   "scripts": {
     "build:dev": "webpack --env mode=development",
     "build:build": "webpack --env mode=production",
-    "start": "webpack serve --env mode=development"
+    "start": "webpack serve --env mode=development",
+    "lint:ts": "eslint \"**/*.{ts, tsx}\"",
+    "lint:ts:fix": "eslint \"**/*.{ts, tsx}\" --fix"
   },
   "keywords": [],
   "author": "",
